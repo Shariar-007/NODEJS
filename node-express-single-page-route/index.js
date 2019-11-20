@@ -12,6 +12,12 @@ app.use(bodyParser.json());
 dishRouter = require('./routes/dishRouter');
 app.use('/dishes', dishRouter);
 
+promoRouter = require('./routes/promoRouter');
+app.use('/promotions', promoRouter);
+
+leaderRouter = require('./routes/leaderRouter');
+app.use('/leaders', leaderRouter);
+
 // app.all('/dishes', (req, res, next) => {
 //     res.statusCode = 200;
 //     res.setHeader('Content-Type', 'text/plain');
