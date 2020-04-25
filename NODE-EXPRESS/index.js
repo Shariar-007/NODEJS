@@ -33,11 +33,15 @@ port = 3000;
 // express give us buch of method to create server
 app = express();
 
-// app.use(morgan('dev'));
-// app.use(express.static(__dirname + '/public'));
+// "App use Morgan with the development". So, this is the development version. So,
+//  it will print out additional information to the screen as required
+app.use(morgan('dev'));
+
+app.use(express.static(__dirname + '/public'));
 
 app.use((req, res, next) => {
-    // console.log(req.headers);
+    // we dont neet to prit req header cz morgan will get sufficiend log
+    // console.log(req.headers);  
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
     res.end('<html><body><h1>This is an Express Server</h1></body></html>');
