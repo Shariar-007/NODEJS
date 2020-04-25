@@ -29,9 +29,12 @@ morgan = require('morgan');
 hostname = 'localhost';
 port = 3000;
 
+// this line says our application is going to used express framework. when we write this line ,
+// express give us buch of method to create server
 app = express();
-app.use(morgan('dev'));
-app.use(express.static(__dirname + '/public'));
+
+// app.use(morgan('dev'));
+// app.use(express.static(__dirname + '/public'));
 
 app.use((req, res, next) => {
     // console.log(req.headers);
