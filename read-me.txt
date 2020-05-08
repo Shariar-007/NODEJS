@@ -1,6 +1,17 @@
 if you want to again go through every project you do then following order can help you a lot to 
 understand each and everything properly.
 
+---------------strt week 1---------------------
 1. look at node-example
 2. node-http 
 3. NODE-EXPRESS
+---------------week 1 finished -----------------
+
+
+---------------strt week 2---------------------
+1. node-mongo
+   i.operation.js 
+    ii.index.js 
+2. node-mongoose (scema create)   
+3. conFusionServer
+

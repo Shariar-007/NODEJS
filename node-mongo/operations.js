@@ -1,5 +1,6 @@
 assert = require('assert');
 
+// call back method has drawback which is solved by promise
 //===== this is callback method way to do operation ====
 
 // exports.insertDocument = (db, document, collection, callback) => {

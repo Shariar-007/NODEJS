@@ -41,6 +41,7 @@ url = 'mongodb://localhost:27017/';
 dbname = 'conFusion';
 dboper = require('./operations');
 
+// call back method has drawback which is solved by promise
 //===== this is callback method way to do operation ====
 // MongoClient.connect(url, (err, client) => {
 //     assert.equal(err, null);
