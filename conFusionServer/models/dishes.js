@@ -1,5 +1,6 @@
 mongoose = require('mongoose');
 Schema = mongoose.Schema;
+
 require('mongoose-currency').loadType(mongoose);
 Currency = mongoose.Types.Currency;
 
@@ -15,8 +16,8 @@ var commentSchema = new Schema({
         required: true
     },
     author: {
-        type: String,
-        required: true
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
 }, {
     timestamps: true

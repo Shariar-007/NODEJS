@@ -13,5 +13,12 @@ understand each and everything properly.
    i.operation.js 
     ii.index.js 
 2. node-mongoose (scema create)   
-3. conFusionServer
+3. conFusionServer (without authenticatin part)
+---------------week 2 finished---------------------
 
+
+---------------strt week 3---------------------
+1. conFusionServer (cookies and seesion) look as app.js and user.js
+2. same project with passport-based authenticatin (implement authenticate.js)
+3. Token Based Aithentication (config.js holds important info for server) authenticate.js, user.js, config.js, app.js,
+4. Mongoose population add into conFusionServer
