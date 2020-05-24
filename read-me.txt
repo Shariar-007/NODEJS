@@ -28,3 +28,5 @@ understand each and everything properly.
 ---------------strt week 4---------------------
 
 1. ensure secure connction between server and client use public cryptography, use HTTPS 
+2. setup https for securing server and clint communication
+3. 
