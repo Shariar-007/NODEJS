@@ -18,9 +18,13 @@ router.get('/', authenticate.verifyUser, authenticate.varifyAdmin, function(req,
             res.statusCode = 200;
             res.setHeader('Content-Type', 'application/json');
             res.json(users);
-        }, (err) => next(err))
-        .catch((err) => next(err));
-})
+        })
+        .catch((err) => {
+            res.statusCode = 500;
+            res.setHeader('Content-Type', 'application/json');
+            res.json({ err: err });
+        });
+});
 
 
 // router.post('/signup', (req, res, next) => {
