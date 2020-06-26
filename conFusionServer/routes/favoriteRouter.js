@@ -128,24 +128,47 @@ favoriteRouter.route('/:dishId')
     .options(cors.corsWithOptions, (req, res) => {
         res.sendStatus(200);
     })
-    .get(cors.cors, authenticate.verifyUser, (req, res, next) => {
-        Favorites.find({
-                'user': req.user._id
-            })
-            .populate('user')
-            .populate({
-                path: 'dishes',
-                match: {
-                    _id: req.params.dishId
-                }
-            })
-            .then(favorite => {
-                // console.log(favorite);
+    // .get(cors.cors, authenticate.verifyUser, (req, res, next) => {
+    //     Favorites.find({
+    //             'user': req.user._id
+    //         })
+    //         .populate('user')
+    //         .populate({
+    //             path: 'dishes',
+    //             match: {
+    //                 _id: req.params.dishId
+    //             }
+    //         })
+    //         .then(favorite => {
+    //             // console.log(favorite);
+    //             res.statusCode = 200;
+    //             res.setHeader('Content-Type', 'application/json');
+    //             res.json(favorite);
+    //         });
+    // })
+
+.get(cors.cors, authenticate.verifyUser, (req, res, next) => {
+    Favorites.findOne({ user: req.user._id })
+        .then((favorites) => {
+            if (!favorites) {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
-                res.json(favorite);
-            });
-    })
+                return res.json({ "exists": false, "favorites": favorites });
+            } else {
+                if (favorites.dishes.indexOf(req.params.dishId) < 0) {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'application/json');
+                    return res.json({ "exists": false, "favorites": favorites });
+                } else {
+                    res.statusCode = 200;
+                    res.setHeader('Content-Type', 'application/json');
+                    return res.json({ "exists": true, "favorites": favorites });
+                }
+            }
+
+        }, (err) => next(err))
+        .catch((err) => next(err))
+})
 
 .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     Favorites.findOne({
