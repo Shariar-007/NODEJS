@@ -22,4 +22,15 @@ understand each and everything properly.
 2. same project with passport-based authenticatin (implement authenticate.js)
 3. Token Based Aithentication (config.js holds important info for server) authenticate.js, user.js, config.js, app.js,
 4. Mongoose population add into conFusionServer
+<<<<<<< HEAD
 5. assignment 3 complete where different types of restriction on api acces applied
+=======
+5. assignment 3 complete where different types of restriction on api acces applied
+
+
+---------------strt week 4---------------------
+
+1. ensure secure connction between server and client use public cryptography, use HTTPS 
+2. setup https for securing server and clint communication
+3. image upload
+>>>>>>> module-4
